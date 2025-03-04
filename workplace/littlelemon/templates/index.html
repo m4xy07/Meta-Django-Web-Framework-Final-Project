@@ -3,14 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Capstone Project</title>
+    <title>Aman's Project</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    {% extends 'base.html' %}
     {% load static %}
-    <img
-      src="{% static 'restaurant/littlelemon.png' %}"
+    {% block content %}
+   <header>
+     <!-- Use the logo_footer.png which is already working -->
+     <img
+      src="{% static 'img/logo_footer.png' %}"
       alt="Little Lemon Logo"
-    />
-    <h1 style="text-align: center">Welcome To Little Lemon Restaurant</h1>
-  </body>
+      class="logo"
+     />
+     <h1>Welcome to Little Lemon Restaurant</h1>
+   </header>
+   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <main>
+      <section class="intro">
+        <p>Experience the best dining with us!</p>
+        <p>This is the home page for Little Lemon Restaurant.</p>
+      </section>
+    </main>
+    {% endblock %}
+  </body></html>
+
+
 </html>
