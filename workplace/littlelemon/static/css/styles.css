@@ -1,0 +1,120 @@
+/* Basic styling for Little Lemon website */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #f4ce14;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #495e57;
+}
+
+nav ul li {
+    padding: 10px 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #f4ce14;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.intro {
+    text-align: center;
+    margin: 30px 0;
+}
+
+h1 {
+    color: #495e57;
+}
+
+footer {
+    background-color: #495e57;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer img {
+    max-width: 100px;
+}
+
+/* Menu styling */
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-price {
+    color: #f4ce14;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+/* Form styling */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form p {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #495e57;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #f4ce14;
+    color: #333;
+}
