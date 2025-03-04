@@ -5,9 +5,9 @@ from .models import Booking, Menu
 from .serializers import BookingSerializer, MenuSerializer
 
 # github.com/m4xy07
+# Rename index to home to match URL pattern name if needed
 def index(request):
-    context = {}
-    return render(request, 'index.html', context)
+    return render(request, 'index.html', {})
 
 # Menu Function
 def menu(request):
