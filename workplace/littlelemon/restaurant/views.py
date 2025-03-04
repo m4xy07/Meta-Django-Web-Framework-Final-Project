@@ -1,42 +1,37 @@
-from rest_framework import generics, viewsets
-from rest_framework.permissions import IsAuthenticated
+# from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Booking, Menu
-from .serializers import BookingSerializer, MenuSerializer
+from .forms import BookingForm
+from .models import Menu
 
-# github.com/m4xy07
-# Rename index to home to match URL pattern name if needed
-def index(request):
-    return render(request, 'index.html', {})
 
-# Menu Function - Fix the context structure
-def menu(request):
-    menu_data = Menu.objects.all()
-    main_data = {"menu": menu_data}
-    return render(request, 'menu.html', {"menu": main_data})
 
-def display_menu_item(request, pk=None):
-    if pk:
-        menu_item = Menu.objects.get(pk=pk)
-    else:
-        menu_item = ""
-    return render(request, 'menu_item.html', {"menu_item": menu_item})
+# Create your views here.
+def home(request):
+    return render(request, 'index.html')
 
 def about(request):
     return render(request, 'about.html')
 
 def book(request):
-    return render(request, 'book.html')
+    form = BookingForm()
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            form.save()
+    context = {'form':form}
+    return render(request, 'book.html', context)
 
-class MenuItemsView(generics.ListCreateAPIView):
-    queryset = Menu.objects.all()
-    serializer_class = MenuSerializer
+# Add your code here to create new views
+#Menu Function
+def menu(request):
+    menu_data = Menu.objects.all()
+    main_data = {"menu": menu_data}
+    return render(request, 'menu.html', {"menu": main_data})
 
-class SingleMenuItemView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Menu.objects.all()
-    serializer_class = MenuSerializer
 
-class BookingViewSet(viewsets.ModelViewSet):
-    queryset = Booking.objects.all()
-    serializer_class = BookingSerializer
-    permission_classes = [IsAuthenticated]
+def display_menu_item(request, pk=None): 
+    if pk: 
+        menu_item = Menu.objects.get(pk=pk) 
+    else: 
+        menu_item = "" 
+    return render(request, 'menu_item.html', {"menu_item": menu_item})
