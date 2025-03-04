@@ -9,11 +9,11 @@ from .serializers import BookingSerializer, MenuSerializer
 def index(request):
     return render(request, 'index.html', {})
 
-# Menu Function
+# Menu Function - Fix the context structure
 def menu(request):
     menu_data = Menu.objects.all()
     main_data = {"menu": menu_data}
-    return render(request, 'menu.html', main_data)
+    return render(request, 'menu.html', {"menu": main_data})
 
 def display_menu_item(request, pk=None):
     if pk:

@@ -9,4 +9,7 @@
   </p>
   {% endfor %}
 </div>
-{% endblock %}
+
+{% if not menu.menu %}
+<p>No menu items available. Please check back later.</p>
+{% endif %} {% endblock %}
