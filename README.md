@@ -49,23 +49,6 @@ The repository is organized according to weekly labs and projects:
 - Introduction to REST APIs
 - Using Django REST framework
 
-## Getting Started
-
-1. Clone this repository
-2. Create a virtual environment: `python -m venv venv`
-3. Activate the virtual environment:
-   - Windows: `venv\Scripts\activate`
-   - macOS/Linux: `source venv/bin/activate`
-4. Install dependencies: `pip install -r requirements.txt`
-5. Navigate to specific lab directories to run individual projects
-
-## Prerequisites
-
-- Python 3.8+
-- Knowledge of basic Python concepts
-- Understanding of HTML/CSS
-- Familiarity with database concepts
-
 ## Learning Resources
 
 - [Django Official Documentation](https://docs.djangoproject.com/)
